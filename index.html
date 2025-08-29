@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Collective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#c09a3e',
+              'brand-dark': '#111111',
+              'brand-light': '#f9f9f9',
+            },
+            fontFamily: {
+              'serif': ['"Playfair Display"', 'serif'],
+              'sans': ['"Inter"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* For smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Custom scrollbar for a more refined look */
+      body::-webkit-scrollbar {
+        width: 6px;
+      }
+      body::-webkit-scrollbar-track {
+        background: #111111;
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: #c09a3e;
+        border-radius: 6px;
+      }
+      body {
+        background-color: #f9f9f9;
+        color: #111111;
+        font-family: 'sans', sans-serif;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.12"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
