@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Testimonial } from '../types';
@@ -63,10 +62,10 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-white">
+    <section id="testimonials" className="py-24 sm:py-32 bg-white">
       <AnimatedSection className="container mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-4xl font-serif font-bold tracking-tight text-brand-dark sm:text-5xl">What Our Clients Say</h2>
-        <div className="relative mt-12 max-w-3xl mx-auto h-48">
+        <div className="relative mt-12 max-w-3xl mx-auto min-h-[16rem] sm:min-h-[12rem] flex items-center justify-center">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}

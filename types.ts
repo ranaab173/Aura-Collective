@@ -1,4 +1,3 @@
-
 export interface Service {
   icon: React.ReactNode;
   title: string;
@@ -11,6 +10,11 @@ export interface PortfolioItem {
   title: string;
   category: string;
   gridClass: string;
+  description: string;
+  about: string;
+  challenge: string;
+  solution: string;
+  gallery: string[];
 }
 
 export interface Testimonial {

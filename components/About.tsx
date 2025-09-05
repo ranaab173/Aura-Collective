@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ImageAssets } from '../constants/ImageAssets';
 import AnimatedSection from './ui/AnimatedSection';
@@ -7,8 +6,8 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-24 sm:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10">
-          <AnimatedSection className="lg:pr-8 lg:pt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 items-center">
+          <AnimatedSection className="lg:pr-8">
             <div className="lg:max-w-lg">
               <h2 className="text-base font-semibold leading-7 text-brand-gold uppercase">About Us</h2>
               <p className="mt-2 text-4xl font-serif font-bold tracking-tight text-brand-dark sm:text-5xl">The Art of Digital Craftsmanship</p>
@@ -20,11 +19,11 @@ const About: React.FC = () => {
               </p>
             </div>
           </AnimatedSection>
-          <AnimatedSection delay={0.2} className="flex items-center justify-center">
+          <AnimatedSection delay={0.2}>
              <img
                 src={ImageAssets.aboutPortrait}
                 alt="Editorial portrait of the team"
-                className="w-full max-w-md lg:max-w-none rounded-sm object-cover h-[500px] lg:h-[600px]"
+                className="w-full max-w-md mx-auto lg:max-w-none rounded-sm object-cover max-h-[600px]"
               />
           </AnimatedSection>
         </div>

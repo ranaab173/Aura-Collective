@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ImageAssets } from '../constants/ImageAssets';
@@ -22,7 +21,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight font-medium"
+          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight font-medium"
         >
           Elevating Digital Presence
         </motion.h1>
