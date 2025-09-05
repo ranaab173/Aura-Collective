@@ -1,7 +1,13 @@
 export interface Service {
+  id: number;
+  slug: string;
   icon: React.ReactNode;
   title: string;
   description: string;
+  heroImage: string;
+  detailedDescription: string[];
+  subServices: string[];
+  relatedProjects: number[];
 }
 
 export interface PortfolioItem {

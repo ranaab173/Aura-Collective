@@ -8,20 +8,32 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectPage from './pages/ProjectPage';
+import ServicePage from './pages/ServicePage';
 import { portfolioData } from './constants/portfolioData';
+import { servicesData } from './constants/servicesData';
+
+type Page = 
+  | { type: 'main' }
+  | { type: 'project'; id: number }
+  | { type: 'service'; slug: string };
+
 
 const App: React.FC = () => {
-  const [currentProject, setCurrentProject] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState<Page>({ type: 'main' });
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#/project/')) {
         const id = parseInt(hash.replace('#/project/', ''), 10);
-        setCurrentProject(id);
+        setCurrentPage({ type: 'project', id });
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/service/')) {
+        const slug = hash.replace('#/service/', '');
+        setCurrentPage({ type: 'service', slug });
         window.scrollTo(0, 0);
       } else {
-        setCurrentProject(null);
+        setCurrentPage({ type: 'main' });
       }
     };
 
@@ -31,23 +43,35 @@ const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const project = currentProject ? portfolioData.find(p => p.id === currentProject) : undefined;
+  const renderPage = () => {
+    switch (currentPage.type) {
+      case 'project':
+        const project = portfolioData.find(p => p.id === currentPage.id);
+        return project ? <ProjectPage project={project} /> : renderMainPage();
+      case 'service':
+        const service = servicesData.find(s => s.slug === currentPage.slug);
+        return service ? <ServicePage service={service} /> : renderMainPage();
+      case 'main':
+      default:
+        return renderMainPage();
+    }
+  }
+  
+  const renderMainPage = () => (
+    <main>
+      <Hero />
+      <Services />
+      <About />
+      <Portfolio />
+      <Testimonials />
+      <Contact />
+    </main>
+  );
 
   return (
     <div className="bg-brand-light font-sans">
       <Header />
-      {project ? (
-        <ProjectPage project={project} />
-      ) : (
-        <main>
-          <Hero />
-          <Services />
-          <About />
-          <Portfolio />
-          <Testimonials />
-          <Contact />
-        </main>
-      )}
+      {renderPage()}
       <Footer />
     </div>
   );
