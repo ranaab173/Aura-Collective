@@ -1,7 +1,7 @@
 import { PortfolioItem } from '../types';
 
 const allImages = [
-    "https://images.pexels.com/photos/1838936/pexels-photo-1838936.jpeg?auto=compress&cs=tinysrgb&w=1260",
+    "https://images.pexels.com/photos/7147772/pexels-photo-7147772.jpeg?auto=compress&cs=tinysrgb&w=1260",
     "https://images.pexels.com/photos/1040400/pexels-photo-1040400.jpeg?auto=compress&cs=tinysrgb&w=1260",
     "https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1260",
     "https://images.pexels.com/photos/1576937/pexels-photo-1576937.jpeg?auto=compress&cs=tinysrgb&w=1260",
